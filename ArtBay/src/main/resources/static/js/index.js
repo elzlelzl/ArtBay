@@ -15,8 +15,6 @@
 
 
 
-
-
 //숫자만 입력 가능
 $(document).on("keyup", "input:text[numberOnly]", function() {
     $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));

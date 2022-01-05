@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel='stylesheet' type='text/css' href="./css/index.css">
+<link rel='stylesheet' type='text/css' href="./css/application.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 
@@ -13,8 +13,10 @@
 <body>
 <!-- START KA-CONTAINER -->
 <div class="ka-container ">
+
         <!-- START CONTENT WRAPPER -->
         <div class="ka-content-wrapper">
+        
             <!-- START CONTENT SECTION -->
             <div class="content">
 <style>

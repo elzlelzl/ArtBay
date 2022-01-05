@@ -13,6 +13,24 @@ public class ArtBayController {
 		mv.setViewName("application");
 		return mv;
 	}
+	@RequestMapping("/consultationInsert")
+	public ModelAndView consultation() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("consultationInsert");
+		return mv;
+	}
+	@RequestMapping("/consultationList")
+	public ModelAndView consultationList() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("consultationList");
+		return mv;
+	}
+	@RequestMapping("/consultationInsertVIew")
+	public ModelAndView consultationView() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("consultationInsertView");
+		return mv;
+	}
 	@RequestMapping("/test")
 	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView();

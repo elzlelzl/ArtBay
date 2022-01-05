@@ -1,0 +1,331 @@
+@charset "UTF-8";
+*{
+	box-sizing:border-box; 
+}
+div{
+	display: block; 
+}
+body {
+    font-family: "Nanum Gothic", sans-serif;
+}
+h2{
+    font-size: 30px;
+}
+#subContentsWrap {
+    margin-bottom: 50px;
+}
+.mt40 {
+    margin-top: 40px !important;
+}
+.container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.boxBar {
+    border: 1px solid #e0e0e0;
+    padding: 30px -24px;
+    border: 1px solid #e0e0e0;
+    padding: 50px 70px;
+    background: #f8f8f8;
+}
+.list-default {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.bul-blue, .list-bul-blue li {
+    clear: both;
+    background: url(../img/list-bul-blue.png) no-repeat 0 2px;
+    padding-left: 25px;
+}
+.boxBar .list-bul-blue li + li {
+    margin-top: 10px;
+}
+.tableDefault > table {
+    width: 100%;
+    border-top: 1px solid #111 !important;
+}
+.tableDefault > table > tbody > tr > th:first-child, .tableDefault > table > tbody > tr > td:first-child {
+    border-left: 0;
+}
+.tableDefault > table > tbody > tr > th {
+    background: #f8f8f8;
+    color: #444444;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: 200px;
+}
+.tableDefault > table > tbody > tr > td {
+    font-size: 14px;
+}
+.tableDefault > table > tbody > tr > td, .tableDefault > table > tbody > tr > th {
+    padding: 7px 25px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    height: 45px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dbdbdb;
+}
+
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: baseline;
+}
+.form-inline .form-control.width-md {
+	width: 300px;
+}
+.form-inline .form-control.width-sm{
+	width:200px;
+}
+.fcRed {
+    color: #e41515;
+}
+textarea.form-control {
+    height: auto;
+}
+div.file-uploader{
+	border: 1px solid #ccc;
+}
+div.uploader-box{
+	display: inline-block;
+}
+.radio-input[type="radio"], .radio-inline input[type="radio"],
+ .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    position: absolute;
+    margin-left: -20px;
+}
+.radio-inline, .checkbox-inline {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    padding-left: 20px;
+    vertical-align: baseline;
+}
+.mt7 {
+    margin-top: 7px !important;
+}
+.col-xs-8{
+    float: left;
+    position: relative;
+    min-height: 1px;
+    margin-right: 10px;
+}
+p {
+    margin: 0;
+}
+.mt10 {
+    margin-top: 10px;
+}
+
+.btnWrap {
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.bwflex {
+    display: flex;
+}
+.btnWrap .btn {
+	display: block;
+    width: 215px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    text-decoration-line: none;
+}
+.btn.btn-save{
+    margin-right: 20px;    
+    border: 1px solid #666666;
+    background-color: #ffffff;
+    color: #000000;
+}
+.btn.btn-cancel {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* LIST*/
+.mt30 {
+    margin-top: 30px;
+}
+.mb30 {
+    margin-bottom: 30px !important;
+}
+.mb5 {
+    margin-bottom: 5px !important;
+}
+.fa {
+    font: normal normal normal 14px/1 FontAwesome;
+}
+.fs16 {
+    font-size: 16px;
+}
+#read-txt.collapse {
+    display: block;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.table-vertical td .radio-inline, .table-vertical td .checkbox-inline {
+    margin-right: 20px;
+}
+@media (min-width: 831px){
+	.form-inline .input-group {
+	    display: inline-table;
+	    vertical-align: middle;
+	}
+}
+.input-group {
+    position: relative;
+    border-collapse: separate;
+}
+.input-group-btn {
+    position: relative;
+    font-size: 0;
+    display: inline-table;
+    white-space: nowrap;
+}
+.btn-ico-date {
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    margin-left: 10px;
+    border: none;
+    background: url(../img/ico-date.png) no-repeat;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.table-vertical td:first-child {
+    border-left: 1px #e0e0e0 solid !important;
+}
+.btnSearch {
+    text-align: center;
+}
+.btnSearch .btn {
+	display: inline-block;
+    width: 180px;
+    height: 40px;
+    line-height: 08px;
+    text-align: center;
+    text-decoration-line: none;
+}
+.btn.btn-search{
+    margin-right: 20px;    
+    border: 1px solid #666666;
+    background-color: #ffffff;
+    color: #000000;
+}
+.btn.btn-search-delete{
+    background-color: #333333;
+    color: #ffffff;
+}
+.mt50 {
+    margin-top: 50px !important;
+}
+.fs15 {
+    font-size: 15px;
+}
+.pull-left {
+    float: left ;
+}
+.mb10 {
+    margin-bottom: 10px ;
+}
+.pull-right {
+    float: right ;
+}
+.clearfix:after{
+	display: table;
+    content: " ";
+    clear: both;
+}
+
+
+.boardList {
+    border-top: 1px solid #1f1f1f;
+}
+.boardList > .bTitle {
+    background: #f8f8f8;
+    display: table;
+    text-align: center;
+    font-weight: bold;
+}
+.boardList > ul, .boardList ul.bContent {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.boardList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.boardList ul.bTitle > li.num {
+    width: 80px;
+}
+.boardList > ul > li,  .boardList ul.bContent > li{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 12px 0;
+}
+.boardList ul.bTitle > li.hit {
+    width: 140px;
+}
+.boardList ul.bTitle > li.date {
+    width: 140px;
+}
+.text-center {
+    text-align: center !important;
+}
+.mb0 {
+    margin-bottom: 0px !important;
+}
+.text-right {
+    text-align: right;
+}
+.btnWrap.view .btn {
+	display: inline-block;
+	text-align: center;
+    width: 100px;
+    border: 1px solid #666666;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+

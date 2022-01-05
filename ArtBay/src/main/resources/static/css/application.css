@@ -37,8 +37,6 @@ label, input, button, select, textarea {
     white-space: nowrap;
 }
 
-
-
 .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -307,11 +305,3 @@ element.style {
     text-align: center;
     text-decoration-line: none; 
 }
-
-
-
-
-
-
-
-
