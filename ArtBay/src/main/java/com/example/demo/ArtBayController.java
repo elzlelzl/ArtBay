@@ -8,9 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ArtBayController {
 	
 	@RequestMapping("/")
-	public ModelAndView index() {
+	public ModelAndView application() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index");
+		mv.setViewName("application");
 		return mv;
 	}
 	@RequestMapping("/test")
