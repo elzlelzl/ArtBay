@@ -28,10 +28,10 @@ label, input, button, select, textarea {
 .applyform > h1 {
     margin-top: 10px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     color: #333333;
     white-space: nowrap;
@@ -171,11 +171,11 @@ body, input, textarea, select, button, table {
 
 
 .material-ch {
-    color: #c4c4c4;
     width: 180px;
     height: 32px;
     padding: 0.2em 0.2em;
     margin-right: 5px;
+    color: #666666;
     font-family: inherit;
     background: url(/img/schedule-img.png) no-repeat 95% 50%;
     border: 1px solid rgb(185, 185, 185);
@@ -200,7 +200,6 @@ body, input, textarea, select, button, table {
 }
 .conapply-text {
     padding: 5px;
-    color: #c4c4c4;
 }
 .conapply-text {
     width: 100%;

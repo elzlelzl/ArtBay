@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' type='text/css' href="./css/application.css">
+<link rel='stylesheet' type='text/css' href="./css/basic.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 
@@ -19,6 +20,7 @@
         
             <!-- START CONTENT SECTION -->
             <div class="content">
+
 <style>
     input[type="text"] {
         width: 180px;
@@ -33,14 +35,7 @@
         appearance: none;
         padding: 0.2em 0.2em;
     }
-
-    @media(max-width:768px) {
-        .card {
-            margin-bottom: 45px
-        }
-    }
 </style>
-
 <div class = "applyform">
 		<h1>미술품 경매 신청서</h1>
 </div>
@@ -209,7 +204,7 @@
                 </tr>
             </tbody></table>
             <div class="apply-btn">
-                <a href="" onclick="">취소</a>
+                <a href="consultationList" onclick="">취소</a>
                 <a href="" onclick="">위탁 신청</a>
             </div>
         </div>

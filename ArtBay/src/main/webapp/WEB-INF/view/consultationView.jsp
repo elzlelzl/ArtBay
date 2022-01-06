@@ -14,8 +14,8 @@
 <form name="frmBoard" method="POST">
 	
 	<!-- location -->
-				<div class="row">
-					<h2 class="fs-md"><strong class="fcBlack">1:1상담문의</strong></h2>
+				<div class = "applyform">
+					<h1>1:1상담문의</h1>
 				</div>
 	<!-- //location -->
 
@@ -31,7 +31,7 @@
 					<tbody><tr>
 						<th>제목</th>
 						<td>
-							(기타문의) <strong>asd</strong>
+							(기타문의) <strong>기타문의</strong>
 
 						</td>
 					</tr>
@@ -39,14 +39,19 @@
 						<th>문의 내용</th>
 						<td>
 							<div class="boardConentsView">
-								asd
+								안녀하세요 문의 입니다. 
 							</div>
-							<p class="mt15 fcGray7">등록일 : 2022-01-06 09:48:10</p>
+							<p class="mt15 fcGray7">등록일 : 2022-01-06</p>
 						</td>
 					</tr>
 					<tr>
 						<th>첨부파일</th>
 						<td class="left" colspan="3">
+							
+								<a href="./img/ff.png">ff.png</a> (635.84 KByte) <br>
+								
+									<img src="./img/ff.png" width="98%"><br>
+								
 								
 						</td>
 					</tr>
@@ -54,9 +59,15 @@
 						<th>답변 내용</th>
 						<td>
 							<div class="boardConentsView">
-								
+								<p>안녕하세요. 아트베이 입니다.&nbsp;<br></p>
+								<p><br></p>
+								<p>문의 사항이 있으실 경우 보다 자세한 기재 부탁 드립니다.&nbsp;</p>
+								<p><br></p>
+								<p>문의가 번거로우시다면</p>
+								<p>고객센터(02-000-0000)로 문의를 부탁드립니다.</p>
+								<p>감사합니다.</p>
 							</div>
-							<p class="mt15 fcGray7">답변일 : </p>
+							<p class="mt15 fcGray7">답변일 : 2022-01-06</p>
 						</td>
 					</tr>
 				

@@ -11,8 +11,8 @@
 <script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
-<div class="row">
-	<h2 class="fs-md"><strong class="fcBlack">1:1 상담문의</strong></h2>
+<div class = "applyform">
+		<h1>1:1상담문의</h1>
 </div>
 <div id="subContentsWrap">
 		<div class="container mt40">
@@ -32,25 +32,13 @@
 						<td>
 							<div class="form-inline">
 								<div class="form-group">
-								<select id="kind" name="kind" class="w130 form-control">
+								<select id="kind" name="kind" class="w130 form-control material-ch" style="width: 130px;">
 												<option>선택하세요</option>
-											
 												<option value="10">회원가입/탈퇴</option>
-											
 												<option value="20">물품문의</option>
-											
 												<option value="30">입금/결제문의</option>
-											
 												<option value="40">배송문의</option>
-											
 												<option value="50">반품/취소/환불</option>
-											
-												<option value="61">추천경매문의</option>
-											
-												<option value="62">메인배너문의</option>
-											
-												<option value="75">상품카테고리</option>
-											
 												<option value="80">기타문의</option>
 								</select>
 								</div>	
@@ -95,14 +83,16 @@
                         	</div>
                             <div id="uploader" class="tui-file-uploader uploader-box">
                                 <div class="file-uploader tui-file-uploader" style="height: 34px; width: 270px;">
+                                
                                 </div>
                                 <label class="tui-btn tui-btn-upload" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 80px; display: flex; align-items: center; justify-content: center;">
                                     <span class="tui-btn-txt" style="line-height: initial;">파일 추가</span>
-                                    <input type="file" name="userfile[]" class="tui-input-file">
+                                    <input type="file" name="userfile" multiple="multiple" class="tui-input-file">
                                 </label>
                             </div>
                   		 </td>
             	   </tr>
+            	   
 					<tr>
 						<th>답변완료알림</th>
 						<td>
