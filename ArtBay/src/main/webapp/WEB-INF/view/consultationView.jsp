@@ -19,7 +19,7 @@
 				</div>
 	<!-- //location -->
 
-	<div id="subContentsWrap" class="mobilePd">
+	<div id="subContentsWrap" >
 		
 		<div class="container">
 			<!-- 마이페이지 -->

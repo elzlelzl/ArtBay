@@ -11,11 +11,13 @@ body {
 h2{
     font-size: 30px;
 }
+p {
+    margin: 0;
+}
+
+
 #subContentsWrap {
     margin-bottom: 50px;
-}
-.mt40 {
-    margin-top: 40px !important;
 }
 .container {
     width: 1200px;
@@ -24,17 +26,17 @@ h2{
 }
 .boxBar {
     border: 1px solid #e0e0e0;
-    padding: 30px -24px;
-    border: 1px solid #e0e0e0;
     padding: 50px 70px;
     background: #f8f8f8;
 }
+
 .list-default {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.bul-blue, .list-bul-blue li {
+
+.list-bul-blue li {
     clear: both;
     background: url(../img/list-bul-blue.png) no-repeat 0 2px;
     padding-left: 25px;
@@ -42,6 +44,8 @@ h2{
 .boxBar .list-bul-blue li + li {
     margin-top: 10px;
 }
+
+
 .tableDefault > table {
     width: 100%;
     border-top: 1px solid #111 !important;
@@ -103,11 +107,36 @@ textarea.form-control {
     height: auto;
 }
 div.file-uploader{
+	position: relative;
 	border: 1px solid #ccc;
 }
 div.uploader-box{
 	display: inline-block;
 }
+.tui-file-uploader .tui-btn {
+    overflow: hidden;
+    font-size: 13px;
+    vertical-align: top;
+    background: #4b96e6;
+    cursor: pointer;
+}
+.tui-file-uploader .tui-btn-upload {
+    position: relative;
+}
+.tui-file-uploader .tui-btn-upload .tui-btn-txt {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 32px;
+}
+.tui-file-uploader .tui-input-file {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
 .radio-input[type="radio"], .radio-inline input[type="radio"],
  .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
     position: absolute;
@@ -123,21 +152,14 @@ div.uploader-box{
     padding-left: 20px;
     vertical-align: baseline;
 }
-.mt7 {
-    margin-top: 7px !important;
-}
+
 .col-xs-8{
     float: left;
     position: relative;
     min-height: 1px;
     margin-right: 10px;
 }
-p {
-    margin: 0;
-}
-.mt10 {
-    margin-top: 10px;
-}
+
 
 .btnWrap {
     margin-top: 30px;
@@ -168,27 +190,16 @@ p {
 }
 
 /* LIST*/
-.mt30 {
-    margin-top: 30px;
-}
-.mb30 {
-    margin-bottom: 30px !important;
-}
-.mb5 {
-    margin-bottom: 5px !important;
-}
+
+
 .fa {
     font: normal normal normal 14px/1 FontAwesome;
 }
-.fs16 {
-    font-size: 16px;
-}
+
 #read-txt.collapse {
     display: block;
 }
-.pl20 {
-    padding-left: 20px !important;
-}
+
 .table-vertical td .radio-inline, .table-vertical td .checkbox-inline {
     margin-right: 20px;
 }
@@ -244,18 +255,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: #333333;
     color: #ffffff;
 }
-.mt50 {
-    margin-top: 50px !important;
-}
-.fs15 {
-    font-size: 15px;
-}
+
 .pull-left {
     float: left ;
 }
-.mb10 {
-    margin-bottom: 10px ;
-}
+
 .pull-right {
     float: right ;
 }
@@ -302,9 +306,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 .text-center {
     text-align: center !important;
 }
-.mb0 {
-    margin-bottom: 0px !important;
-}
+
 .text-right {
     text-align: right;
 }

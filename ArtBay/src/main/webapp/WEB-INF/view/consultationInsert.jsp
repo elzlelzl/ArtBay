@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel='stylesheet' type='text/css' href="./css/consultation.css">
+<link rel='stylesheet' type='text/css' href="./css/basic.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="./js/index.js"></script>
 </head>
@@ -13,11 +14,8 @@
 <div class="row">
 	<h2 class="fs-md"><strong class="fcBlack">1:1 상담문의</strong></h2>
 </div>
-<div id="subContentsWrap" class="mobilePd">
-		
-
+<div id="subContentsWrap">
 		<div class="container mt40">
-
 				<!-- 안내박스 -->
 			<div class="boxBar">
 				<ul class="list-default list-bul-blue">
@@ -26,9 +24,7 @@
 					<li>답변은 마이페이지 &gt; 나의활동내역 &gt; 1:1문의에서 확인 가능합니다.</li>
 				</ul>
 			</div>
-
 			<!-- 게시판 쓰기 -->
-
 			<div class="tableDefault mt40">
 				<table>
 					<tbody><tr>
@@ -97,10 +93,10 @@
                    		<td>
                         	<div class="form-group">
                         	</div>
-                            <div id="uploader" class="uploader-box">
-                                <div class="file-uploader" style="height: 34px; width: 270px;">
+                            <div id="uploader" class="tui-file-uploader uploader-box">
+                                <div class="file-uploader tui-file-uploader" style="height: 34px; width: 270px;">
                                 </div>
-                                <label class="tui-btn tui-btn-upload m-t-5" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 80px; display: flex; align-items: center; justify-content: center;">
+                                <label class="tui-btn tui-btn-upload" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 80px; display: flex; align-items: center; justify-content: center;">
                                     <span class="tui-btn-txt" style="line-height: initial;">파일 추가</span>
                                     <input type="file" name="userfile[]" class="tui-input-file">
                                 </label>
