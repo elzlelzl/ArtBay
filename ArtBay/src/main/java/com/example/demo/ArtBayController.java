@@ -25,10 +25,10 @@ public class ArtBayController {
 		mv.setViewName("consultationList");
 		return mv;
 	}
-	@RequestMapping("/consultationInsertVIew")
+	@RequestMapping("/consultationView")
 	public ModelAndView consultationView() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("consultationInsertView");
+		mv.setViewName("consultationView");
 		return mv;
 	}
 	@RequestMapping("/test")
