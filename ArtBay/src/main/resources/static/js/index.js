@@ -5,16 +5,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 //숫자만 입력 가능
 $(document).on("keyup", "input:text[numberOnly]", function() {
     $(this).val(addCommas($(this).val().replace(/[^0-9]/g,"")));
@@ -29,6 +19,13 @@ function removeCommas(x) {
     else return x.split(",").join("");
 }
 
-
-
-
+function validate(){
+	if(title.value==''){
+		$("#modal-common").show();
+	}else{
+		$("#modal-warning").show();
+	}
+}
+function modalOff(modal){
+	modal.hide();
+}

@@ -2,7 +2,10 @@
 *, ::after, ::before {
     box-sizing: border-box;
 }
-body, div, ul, li, dl, dd, dt, ol, h1, h2, h3, h4, h5, h6, input, fieldset, legend, p, select, table, th, td, tr, textarea, button, form, figure, figcaption {
+html, body{
+	overflow-x: hidden;
+}
+body, div, ul, li, h1, h2, h4, h5, input, p, select, table, th, td, tr, textarea, button {
     margin: 0;
     padding: 0;
 }
@@ -14,10 +17,6 @@ label, input, button, select, textarea {
     font-size: 14px;
     font-weight: normal;
     line-height: 20px;
-}
-.ka-container .ka-content-wrapper .content {
-    padding-bottom: 220px;
-    min-height: 100%;
 }
 .applyform {
     position: relative;
@@ -38,6 +37,9 @@ label, input, button, select, textarea {
 }
 
 .container {
+	width:1280px;
+	margin-right: auto;
+    margin-left: auto;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -210,11 +212,6 @@ body, input, textarea, select, button, table {
     appearance: none;
 }
 
-.tui-file-uploader, .tui-file-uploader [class^=tui-] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; 
-}
 .tui-file-uploader-area {
     position: relative;
     width: 698px;
@@ -234,7 +231,6 @@ body, input, textarea, select, button, table {
     bottom: -1px;
     margin: 0;
     text-align: center;
-    z-index: -999;
 }
 element.style {
     min-height: 100px;
@@ -304,3 +300,106 @@ element.style {
     text-align: center;
     text-decoration-line: none; 
 }
+/* 모달창 */
+
+.modal{
+	z-index : 2;
+    background-color: rgba(0,0,0,.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    display: none;
+    /* display: none; */
+    /* justify-content:center; //수평 중앙정렬
+  align-items:center;     //수직 중앙정렬 */
+}
+.modal > div{
+	max-width:500px;
+	height: 100%;
+	margin: 1.75rem auto;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal > div > div{
+	position: relative;
+	width:100%;              
+	background-color:#fff;
+	padding: 30px;
+}
+.modal > div > div > div{
+	width:100%;
+	display: flex;              
+	align-items: center;
+	flex-direction: column;
+}
+.modal > div > div > div > h2{
+	font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.modal > div > div > div> img{
+	max-width: 100%;
+    margin-bottom: 5px;
+}
+.modal > div > div > div> span{
+	display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #666666;
+    text-align: center;
+}
+.modal > div > div > .modal-close{
+	position: absolute;
+    top: 12px;
+    right: 12px;
+    max-width: 100%;
+    cursor: pointer;
+}
+.modal.fade > div > div > div > a{
+	margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+	display: block;
+    padding: 0 40px;
+    color: #Fff;
+    background-color: #000000;
+    text-decoration-line: none; 
+}	
+.modal.fade > div > div > div > .modal-btn{
+	margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.modal.fade > div > div > div > .modal-btn > a:first-child{
+	border: 1px solid #cccccc;
+    color: #000000;
+    margin-right: 8px;
+}
+.modal.fade > div > div > div > .modal-btn > a:last-child{
+	background-color: #000;
+    color: #fff;
+}
+.modal.fade > div > div > div > .modal-btn > a{
+	width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration-line: none; 
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -83,7 +83,6 @@
                         	</div>
                             <div id="uploader" class="tui-file-uploader uploader-box">
                                 <div class="file-uploader tui-file-uploader" style="height: 34px; width: 270px;">
-                                
                                 </div>
                                 <label class="tui-btn tui-btn-upload" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 80px; display: flex; align-items: center; justify-content: center;">
                                     <span class="tui-btn-txt" style="line-height: initial;">파일 추가</span>

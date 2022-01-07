@@ -8,10 +8,10 @@
 <link rel='stylesheet' type='text/css' href="./css/application.css">
 <link rel='stylesheet' type='text/css' href="./css/basic.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script type="text/javascript" src="./js/index.js"></script>
 
 </head>
 <body>
+<form name='frm_bay_insert' id='frm_bay_insert' method="post">
 <!-- START KA-CONTAINER -->
 <div class="ka-container ">
 
@@ -205,7 +205,7 @@
             </tbody></table>
             <div class="apply-btn">
                 <a href="consultationList" onclick="">취소</a>
-                <a href="" onclick="">위탁 신청</a>
+                <a href="#" onclick="validate()">위탁 신청</a>
             </div>
         </div>
     </div>
@@ -217,5 +217,42 @@
         </div>
 <!-- END KA-CONTAINER -->
 </div>
+
+
+<!--알림 모달창 -->
+<div class="modal fade show" id="modal-common" >
+	<div>
+		<div>
+			<div>
+			    <img src="./img/warning-icon@1x.png" id="img-warning">
+			    <h2>알림</h2>
+				<span id="modal-message">작품명을 입력해 주세요.</span>
+				<a href="#" class="btn-ok" onclick="modalOff($('#modal-common'))">확인</a>
+			</div>
+			<img src="./img/popup-close@1x.png" class="modal-close" onclick="modalOff($('#modal-common'))">
+		</div>
+	</div>
+</div>
+
+
+<!-- 위탁신청 -->
+<div class="modal fade show" id="modal-warning" >
+	<div>
+		<div>
+			<div>
+			    <img src="/img/Error-icon@1x.png">
+			    <h2 id="modal-warning-title">위탁신청</h2>
+			    <span id="modal-warning-message">위탁 신청을 하시겠습니까?</span>
+			    <div class="modal-btn">
+			        <a href="#" onclick="modalOff($('#modal-warning'))">취소</a>
+			    	<a id="btn-warning-confirm" href="consultationList" onclick="">확인</a>
+		        </div>
+		    </div>
+			<img src="./img/popup-close@1x.png" class="modal-close" onclick="modalOff($('#modal-warning'))">
+		</div>
+	</div>
+</div>
+</form>
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
 </html>

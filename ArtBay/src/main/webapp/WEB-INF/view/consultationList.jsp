@@ -87,7 +87,7 @@
 
 			<div class="boardList">
 				<ul class="bTitle">
-					<li class="num w140">구분</li>
+					<li class="num">구분</li>
 					<li>제목</li>
 					<li class="hit">답변여부</li>
 					<li class="date">등록일</li>
@@ -126,7 +126,9 @@
 		<div class="pager">
 			<ul class="pagination">
 				<li><a href="#none" onclick="" style="letter-spacing:-3px;">&lt;&lt;</a></li>
+				<li><a href="#none" onclick="" style="letter-spacing:-3px;">&lt;</a></li>
 				<li class="active"><a href="#none">1</a></li>
+				<li><a href="#none" onclick="" style="letter-spacing:-3px;">&gt;</a></li>
 				<li><a href="#none" onclick="" style="letter-spacing:-3px;">&gt;&gt;</a></li>
 			</ul>
 		</div><!--// pagination -->

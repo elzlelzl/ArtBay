@@ -37,7 +37,7 @@ p {
     margin-bottom: 50px;
 }
 .container {
-    width: 1200px;
+    width: 1280px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -122,13 +122,11 @@ table {
 }
 .form-inline .form-control {
   display: inline-block;
+  width:auto;
   vertical-align: baseline;
 }
 .form-inline .form-control.width-md {
-	width: 300px;
-}
-.form-inline .form-control.width-sm{
-	width:200px;
+	width: 25%;
 }
 .fcRed {
     color: #e41515;
@@ -297,7 +295,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     margin: 0;
 }
 .boardList ul.bTitle > li.num {
-    width: 80px;
+    width: 12%;
 }
 .boardList > ul > li,  .boardList ul.bContent > li{
     display: table-cell;
@@ -310,10 +308,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     text-decoration-line: none;
 }
 .boardList ul.bContent > li.hit, .boardList ul.bTitle > li.hit {
-    width: 140px;
+    width: 10%;
 }
 .boardList ul.bContent > li.date, .boardList ul.bTitle > li.date {
-    width: 140px;
+    width: 10%;
 }
 .text-left {
     text-align: left !important;
@@ -322,14 +320,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     color: #111111 !important;
 }
 .boardList ul.bContent > li.sortation, .boardList ul.bTitle > li.sortation {
-    width: 150px;
+    width: 12%;
 }
 
 .boardList ul.bTitle > li.hit {
-    width: 140px;
+    width: 10%;
 }
 .boardList ul.bTitle > li.date {
-    width: 140px;
+    width: 10%;
 }
 .text-center {
     text-align: center !important;
