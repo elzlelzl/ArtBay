@@ -254,5 +254,5 @@
 </div>
 </form>
 </body>
-<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/application.js"></script>
 </html>

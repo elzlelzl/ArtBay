@@ -8,7 +8,7 @@
 <link rel='stylesheet' type='text/css' href="./css/consultation.css">
 <link rel='stylesheet' type='text/css' href="./css/basic.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/application.js"></script>
 </head>
 <body>
 <form name="frmBoard" method="POST">
