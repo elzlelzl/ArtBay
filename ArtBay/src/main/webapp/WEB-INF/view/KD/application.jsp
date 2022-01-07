@@ -7,10 +7,16 @@
 <title>Insert title here</title>
 <link rel='stylesheet' type='text/css' href="./css/application.css">
 <link rel='stylesheet' type='text/css' href="./css/basic.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 </head>
 <body>
+<!-- 메뉴 네비게이션 -->
+	<%@include file="../header.jsp" %>
+	
 <form name='frm_bay_insert' id='frm_bay_insert' method="post">
 <!-- START KA-CONTAINER -->
 <div class="ka-container ">
@@ -71,19 +77,19 @@
             <table class="apply-table">
                 <tbody><tr>
                     <td>이름</td>
-                    <td>김동규</td>
+                    <td>홍길동</td>
                 </tr>
                 <tr>
                     <td>주소</td>
-                    <td>08759 서울 관악구</td>
+                    <td> 서울 관악구</td>
                 </tr>
                 <tr>
                     <td>휴대전화</td>
-                    <td>010-2228-7514</td>
+                    <td>010-2222-3333</td>
                 </tr>
                 <tr>
                     <td>이메일</td>
-                    <td>5411515@naver.com</td>
+                    <td>test@naver.com</td>
                 </tr>
             </tbody></table>
         </div>
@@ -157,7 +163,7 @@
                     <td>작품설명</td>
                     <td>
                         <div>
-                            <textarea class="conapply-text" id="desc"  placeholder="작품에 대해서 가능한 많은 정보를 기입해 주세요. (예 : 소장 경로 또는 출처, 감정서 유무, 전시이력, 수록된 도서 등)"></textarea>
+                            <textarea class="conapply-text" id="desc"  placeholder="작품에 대해서 가능한 많은 정보를 기입해 주세요. (예 : 소장 경로 또는 출처, 감정서 유무, 전시이력)"></textarea>
                         </div>
                     </td>
                 </tr>
@@ -253,6 +259,8 @@
 	</div>
 </div>
 </form>
+<!-- 메인 푸터 -->
+	<%@include file="../footer.jsp" %>
 </body>
 <script type="text/javascript" src="./js/application.js"></script>
 </html>

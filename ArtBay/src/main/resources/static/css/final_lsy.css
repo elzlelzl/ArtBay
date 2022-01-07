@@ -1,0 +1,245 @@
+@charset "UTF-8";
+/* Bid.jsp, Consign.jsp */
+*{
+	border:0px solid #000;
+	box-sizing:border-box;
+	margin:0px auto;
+}
+body{
+	width:1280px;
+	
+}
+#auction{
+	margin-top:40px;
+	
+}
+#auction>h1{
+	text-align:center;
+}
+
+#auction #items {
+	width:1100px;
+	line-height:1.5em;
+	margin-top:40px;
+	
+}
+
+#auction #items #title{
+	height:30px;
+	font-weight:bold;
+	padding-top:4px;
+	background-color:#ddd;
+	width:900px;
+
+}
+#auction #items #title, #rows{
+	text-align:center;
+	margin:0 auto;
+}
+#auction #items #rows #item{
+	border-top:2px solid #ddd;
+	width:900px;
+}
+#auction #items #rows #item:hover{
+	background-color:#ddd;
+	
+}
+#auction #items .artName{
+	width:150px;
+	overflow:hidden;
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+}
+#auction #items .num, .artist, .requestPrice, .successPrice {
+	display:inline-block;
+	width:120px;
+	text-align:center;
+	vertical-align:middle;
+}
+#auction #items .requestDate, .successDate, .name, .consignDate, .delConsign{
+	width:110px;
+	display:inline-block;
+	text-align:center;
+	vertical-align:middle;
+}
+#auction #btnZone{
+	height:50px;
+	padding-top:20px;
+	margin-top:40px;
+}
+#auction #btnZone input{
+	color:#222;
+	border:1px solid #d7d7d7;
+	margin-left:3px;
+	height:22px;
+		
+}
+#auction #btnZone input:hover{
+	border:1px solid #000;
+	cursor:pointer;
+	
+}
+#auction #btnZone input:active{
+	background-color:#aaa;
+}
+#auction #btnZone{
+	text-align:center;
+	margin-top:10px;
+}
+
+
+#auction .successPrice{
+	display:inline-block;
+	width:80px;
+	text-align:center;
+}
+
+/*consign*/
+#auction #consignBtn{
+	background-color:#f60;
+	margin-bottom:10px;
+	display:inline-block;
+	height:35px;
+	width:74px;
+	position:relative;
+	top:30px;
+	left:870px;
+	color:#fff;
+	font-weight:bold;
+}
+#auction #delConsignBtn{
+	background-color:#f60;
+	margin-bottom:10px;
+	display:inline-block;
+	height:35px;
+	width:120px;
+	position:relative;
+	top:30px;
+	left:890px;
+	color:#fff;
+	font-weight:bold;
+}
+#auction #consignBtn:hover{
+	cursor:pointer;
+	background-color:#fff;
+	color:#f60;
+	border:1px solid #f60;
+}
+
+#auction #delConsignBtn:hover{
+	cursor:pointer;
+	background-color:#ff0000;
+	color:#fff;
+}	
+
+/*Result*/
+#auction form #findZone{
+	margin: 20px 7px;
+	position:relative;
+	
+}
+#auction form #findZone input[type='search']{
+	width:380px;
+	height:28px;
+	border:1px solid #aaa;
+	margin-left:178px;
+}
+#auction form #findZone input[type='button']{
+	height:28px;
+	width:40px;
+	background-color:#fff;
+	border:1px solid #aaa;
+}
+#auction form #findZone input[type='button']:hover{
+	cursor:pointer;
+	background-color:#ddd;
+}
+#auction form #findZone select{
+	border:1.5px solid #aaa;
+	position:absolute;
+	right:190px;
+}
+#auction form #findZone option[value='none']{
+	font-weight:bold;
+}
+#auction #list{
+	text-align:center;
+}
+#auction #list #item{
+	text-align:left;
+	display:inline-block;
+	width:450px;
+	height:160px;
+	border:1px solid #aaa;
+	position:relative;
+} 
+
+#auction #list #item img{
+	position:absolute;
+	right:0px;
+	top:0px;
+	
+}
+#auction #list #item{
+	padding:20px;
+	margin-left:15px;
+	margin-bottom:15px;
+}
+#auction #list #item .weekly_value, .weekly_title{
+	font-size:15px;
+	font-weight:bold;
+}
+#auction #list #item .startDate_title, .startDate_value, .endDate_title, .endDate_value{
+	font-size:14px;
+}
+#auction #list #item input{
+	width:70px;
+	height:30px;
+	margin-top:10px;
+	background-color:#111;
+	color:#fff;
+}
+
+/*FAQ*/
+#auction_faq{
+	margin:40px auto;
+	width:1280px;
+}
+#auction_faq h1{
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:40px;
+}
+#auction_faq #list{
+	border-top:2px solid #aaa;
+	width:1000px;
+	margin: 0 auto;
+	line-height:1.8em;
+}
+#auction_faq #list li{
+	border-bottom:2px solid #ddd;
+}
+#auction_faq #list a{
+	color:#555;
+	text-decoration:none;
+}
+#auction_faq #list a:hover{
+	cursor:pointer;
+}
+#auction_faq .faq .question {
+    margin: 0px;
+    padding: 0px 0px 5px 0px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+}
+ 
+auction_faq .faq .answer_container {
+	height: 0px;
+    overflow: hidden;
+    padding: 0px;
+
+}
+
+/*auction_view*/
