@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class ArtBayController {
 
-	
+
 	@RequestMapping(value="/")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
@@ -49,10 +49,17 @@ public class ArtBayController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/memberLoginModal")
+	public ModelAndView memberLoginModal(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("imsi/memberLogin");
+		return mv;
+	}
+	
 	@RequestMapping(value="/Bid")
 	public ModelAndView Bid() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("imsi/lsy/Bid");
+		mv.setViewName("lsy/Bid");
 		
 		return mv;
 	}
@@ -60,15 +67,20 @@ public class ArtBayController {
 	@RequestMapping(value="/SuccessfulBid")
 	public ModelAndView SuccessfulBid() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("imsi/lsy/SuccessfulBid");
+		mv.setViewName("lsy/SuccessfulBid");
 		
 		return mv;
 	}
-	
+	@RequestMapping(value="/ConsignGuide")
+	public ModelAndView ConsignGuide (HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("lsy/ConsignGuide");
+		return mv;
+	}  
 	@RequestMapping(value="/Consign")
 	public ModelAndView Consign() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("imsi/lsy/Consign");
+		mv.setViewName("lsy/Consign");
 		
 		return mv;
 	}
@@ -76,7 +88,7 @@ public class ArtBayController {
 	@RequestMapping(value="/Result")
 	public ModelAndView Result() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("imsi/lsy/Result");
+		mv.setViewName("lsy/Result");
 		
 		return mv;
 	}
@@ -84,10 +96,25 @@ public class ArtBayController {
 	@RequestMapping(value="/FAQ")
 	public ModelAndView FAQ() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("imsi/lsy/FAQ");
+		mv.setViewName("lsy/FAQ");
 		
 		return mv;
 	}
+	
+	@RequestMapping(value = "/noticeList")
+	public ModelAndView noticeList() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("lsy/noticeList");
+		return mv;		
+	}	
+	
+	@RequestMapping(value = "/noticeView")
+	public ModelAndView noticeView() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("lsy/noticeView");
+		return mv;		
+	}	
+	
 	@RequestMapping("/application")
 	public ModelAndView application() {
 		ModelAndView mv = new ModelAndView();
@@ -112,6 +139,12 @@ public class ArtBayController {
 		mv.setViewName("KD/consultationView");
 		return mv;
 	}
+	@RequestMapping("/howto")
+	public ModelAndView howto() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("KD/howto");
+		return mv;
+	}
 	
 	@RequestMapping(value="/list")
 	public ModelAndView artbayMain(HttpServletRequest req) {
@@ -124,6 +157,14 @@ public class ArtBayController {
 	public ModelAndView artbayView(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("artbay/view");
+		return mv;
+	}
+	
+	
+	@RequestMapping(value="/bidIntro")
+	public ModelAndView artbayBidIntro(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("artbay/bidIntro");
 		return mv;
 	}
 }

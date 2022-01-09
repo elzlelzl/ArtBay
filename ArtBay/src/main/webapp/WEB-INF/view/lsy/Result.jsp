@@ -4,12 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel='stylesheet' type='text/css' href='./css/final_lsy.css'>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link rel='stylesheet' type='text/css' href="./css/basic.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
 <meta charset="UTF-8">
 <title>경매결과</title>
 </head>
 <body>
+<%@include file="../header.jsp" %>
 <div id='auction'>
 <h1>Online Action 경매 결과</h1>	
 	<form name='frm_auction' method='post'>
@@ -28,7 +33,7 @@
 		
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'>  온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -38,7 +43,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'> 온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -48,7 +53,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'> 온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -58,7 +63,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'>  온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -68,7 +73,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'>  온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -78,7 +83,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'>  온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -88,7 +93,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'>  온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -98,7 +103,7 @@
 			</div>
 			<div id='item' onclick = >
 				<span class='weekly_value'  >2021년 12월 27일</span>
-				<span class='weekly_title'>위클리 온라인 경매</span><br/>
+				<span class='weekly_title'>  온라인 경매</span><br/>
 				<span class='startDate_title'>경매시작일</span>
 				<span class='startDate_value'>2021-12-12</span><br/>
 				<span class='endDate_title' >경매종료일</span>	
@@ -125,6 +130,7 @@
 	</div>
 	</form>
 </div>
-<script src='./js/final_lsy.js'></script>
+<%@include file="../footer.jsp" %>
 </body>
+<script src='./js/final_lsy.js'></script>
 </html>

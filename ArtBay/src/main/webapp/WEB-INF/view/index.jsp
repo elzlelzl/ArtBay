@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <<<<<<< HEAD
 <title>ArtBay Index</title>
+<link rel='stylesheet' type='text/css' href='/css/index.css'>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
@@ -24,6 +25,7 @@
 			<li><a href="/Consign">위탁내역</a></li>
 			<li><a href="/Result">경매결과</a></li>
 			<li><a href="/FAQ">FAQ</a></li>
+			<li><a href="/ConsignGuide">위탁안내</a></li>
 			<br/>
 			<li><a href="/application">경매 신청서</a></li>
 			<li><a href="/consultationInsert">1:1문의 신청</a></li>
@@ -35,33 +37,12 @@
 			<br/>
 			<li><a href="/home">메인페이지.</a></li>
 			<br/>
-			<li><a href="/">테스트용으로 쓰세요.</a></li>
-			<li><a href="/">테스트용으로 쓰세요.</a></li>
-			<li><a href="/">테스트용으로 쓰세요.</a></li>
-			<li><a href="/">테스트용으로 쓰세요.</a></li>
+			<li><a href="/bidIntro">응찰 안내 (응찰 안내만 가능하게 두었습니다.)</a></li>
+			<li><a href="/noticdList">공지사항</a></li>
+			<li><a href="/noticeView">공지사항 상세</a></li>
 		</ul>	
 		<input type='button' id='btn' value='test'>
 	</div>	
 
-
-<%
-String sub="./index_sby.jsp"; //기본 페이지
-if( request.getParameter("sub") != null){
-	sub = request.getParameter("sub");
-}
-%>
-<div>
-<!-- 메뉴 네비게이션 -->
-	<%@include file="./header.jsp" %>
-
-	<section> <!-- (3) -->
-		<jsp:include page="<%=sub %>" />
-	<!-- 액션태크, 동적삽입 -->
-	</section>
-
-
-	<!-- 메인 푸터 -->
-	<%@include file="./footer.jsp" %>
-</div>
 </body>
 </html>
