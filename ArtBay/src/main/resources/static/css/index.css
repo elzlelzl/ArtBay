@@ -13,16 +13,20 @@ body {
 }
 /******************************************************************************/
 /****************************** 메뉴 네비게이션 ***********************************/
+header { 
+	width: 1280px;
+	margin: 0 auto;
+}
 header > * {
 	display: inline-block;
-	line-height: 70px;
+	line-height: 70px; 
 }
 /******* 메뉴 로고 *******/
 .logo {
 	padding-left: 10%;
 }
 .logo > li {
-	float: left;
+	float: left; 
 }
 .logo > li > a {
 	text-decoration: none;
@@ -34,7 +38,7 @@ header > * {
 /******* 메뉴 1단 *******/
 .navi > li {
 	float: left;
-	position: relative;
+	position: relative; 
 }
 .navi > li > a {	
 	padding: 0 50px;
@@ -46,7 +50,7 @@ header > * {
 
 /******* 메뉴 2단 *******/
 .navi {
-	padding: 0 15% 0 10%;
+	padding: 0 7%;
 }
 .navi ul {
 	position: absolute;
@@ -87,15 +91,48 @@ header > * {
 	color: #000;
 }
 
-/******* 메뉴 로그인/회원가입 *******/
-.login li {
+/******* 메뉴 로그인/회원가입/마이페이지/위시리스트 *******/
+.mainLogin {
+	position: relative;
+}
+.mainLogin li {
 	float: left;
 }
-.login li > a {
+.mainLogin li > a {
 	padding: 0px 10px;
 	text-decoration: none;
 	color: #909090;
 	font-size: 0.9em;
+}
+#mypage {
+	position: absolute;
+	left: 0;
+	top: 70px;
+	z-index: 999;
+	width: 160px;
+	border: 1px solid #f4f5f7;
+	border-radius: 5px;
+	display: none;
+	background: #fff;
+	overflow: hidden;
+}
+#mypage ul li {
+	line-height: 10px;
+	padding: 10px 0 10px 20px;
+	font-size: 0.8em;
+	font-weight: bold;
+	cursor: pointer;
+	color: #949494;
+	width: 100%;
+}
+#mypage ul li:hover {
+	border-left: 3px solid #e97108;
+	padding-left: 17px;
+	background: #f9fbfd;
+	color: #000;
+}
+#mypage ul li:nth-last-child(2) {
+	border-top: 1px solid #f4f5f7;
 }
 /******************************************************************************/
 /**************************** 메인화면 이미지 슬라이드 *******************************/
@@ -264,6 +301,8 @@ header > * {
 	width: 80%;
 	margin: 0 auto;
 }
+
+
 .howto_zone > div .title {
 	font-weight: bold;
 	margin-top: 20px;
@@ -286,6 +325,7 @@ header > * {
 	color: #fff;
 	cursor: pointer;
 }
+
 /****** 경매일정 ******/
 .schedule_zone {
 	width: 29%;

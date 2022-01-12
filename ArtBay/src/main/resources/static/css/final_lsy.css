@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* Bid.jsp, Consign.jsp */
 *{
-	border:0px solid #000;
 	box-sizing:border-box;
 	margin:0px auto;
 }
@@ -44,7 +43,11 @@
 	width:900px;
 	margin:0 auto;
 }
-
+#auction #items #rows #item:hover{
+	cursor:pointer;
+	background-color:#ddd;
+	
+}
 #auction #items .artName{
 	width:150px;
 	overflow:hidden;
@@ -206,10 +209,10 @@
 }
 /*FAQ*/
 #auction_faq{
-	
 	width:1280px;
-	min-height:500px;
-	margin:80px auto 0;
+	min-height:800px;
+	margin:0px auto;
+	box-sizing:border-box;
 }
 
 #auction_faq h1{
@@ -217,7 +220,7 @@
 	font-weight:bold;
 	margin-bottom:90px;
 	font-size:30px;
-	margin-top:20px;
+	padding-top:20px;
 }
 #auction_faq .faq{
 	border-top:2px solid #aaa;
@@ -267,15 +270,15 @@
 	height:160px;
 	font-size:30px;
 	text-align:center;
-	font-weight:border;
+	font-weight:bolder;
 	padding-top:40px;
 	
 }
 #consignGuide{
-	width:820px;
+	width:1020px;
 	box-sizing:border-box;
 	position:relative;
-	margin:20px 120px 30px 420px;
+	margin:20px 120px 30px 320px;
 	line-height:1.5em;
 }
 
@@ -405,40 +408,14 @@
 }
 
 /*noticeList , noticeView*/
-#auction #noticeSearch input[type='text']{
-	position:relative;
-	top:79px;
-	left:200px;
-}
-#auction #noticeSearch #findZone{
-	position:relative;
-	top:35px;
-	left:474px;
-}
-#auction #items .title{
-	display:inline-block;
-	width:600px;
-	text-align:center;
-}
-#auction #items .noticeDate{
-	display:inline-block;
-	width:150px;
-	text-align:center;
-}
-#auction #items #rows #notice_item{
-	border-top:2px solid #ddd;
-	width:900px;
-	margin:0 auto;
-}
-#auction #items #rows #notice_item:hover{
-	background-color:#ddd;	
-	cursor:pointer;
-}
+
+
 
 /*noticeView*/
 #noticeView{
 	width:1080px;
 	margin:10px auto;
+	min-height:900px;
 }
 
 #noticeView h1{
@@ -483,15 +460,55 @@
 	background-color:#f60;
 	color:#fff;
 }
+/* customerWriteNotice*/
+#writeNotice{
+	width:1280px;
+	min-height:900px;
+	line-height:1.5em;
+	margin:0 auto;
+}
+#writeNotice h1{
+	text-align:center;
+	font-size:28px;
+	margin-top:50px;
+	font-weight:bold;
+	margin-bottom:80px;
+}
 
+#writeNotice #noticeWrite_container{
+	display:inline-block;
+	margin-left:200px;
+	
+}
+#writeNotice #noticeWrite_container label{
+	margin:20px 5px;
+	position:relative;
+	bottom:5px;
+	
+}
+#writeNotice #noticeWrite_container input{
+	display:inline-block;
+	margin-right:20px;
+	margin-bottom:10px;
+}
+#writeNotice #notice_doc{
+	width:900px;
+}
 
-
-
-
-
-
-
-
+#writeNotice #btnSaveNotice{
+	position:relative;
+	left:600px;
+	background-color:#fff;
+	border:2px solid #555;
+	color:#000;
+	width:80px;
+	height:30px;
+}
+#writeNotice #btnSaveNotice:hover{
+	background-color:#f60;
+	color:#fff;
+	cursor:pointer;
+}
 
 
 
