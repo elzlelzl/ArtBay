@@ -27,7 +27,7 @@
 	$('.detail').click(function(){
 		location.href='/list';
 	})
-	
+	//customer 위탁안내 부분 
 	$('.desc01').show();
 	$('.desc02').hide();
 	$('.desc03').hide();
@@ -60,6 +60,7 @@
 		$('.desc04').show();
 		return false;
 	});
+
 	//클릭하면 배경색 변화
 	$('#consign_step1').click(function(){
 		$('#consign_step1').css('background-color', '#f60');
@@ -112,6 +113,70 @@
 	$('#btnDeleteNotice').click(function(){
 		alert("선택한 공지가 삭제되었습니다.");
 	})
+	
+	//응찰내역에서 응찰신청
+	$('#btnRequestApplication').click(function(){
+		location.href='./bidApplication';
+	})
+	
+	//FAQ 카테고리 선택하면 아래에 그 faq만 보이기
+
+	
+	$('.faq_desc ul').each(function(index, item){
+		$(item).hide();	
+	})
+	
+	$('.faq_desc ul').eq(0).show();
+	//faq 카테고리 별 리스트 변경
+	$('.active').each(function(index, item){
+		
+		$(this).click(function(){
+			var i = $(item).index();
+			var selectedFaq = $('.faq_desc ul').eq(i);
+			$('.faq_desc ul').not(selectedFaq).hide();
+			selectedFaq.show();
+			
+				
+		})
+	})
+	$('.active').eq(0).addClass('clicked_menu');
+		
+	$('.active').each(function(index, item){
+		$(this).attr('menu-index',index);	
+	}).click(function(){
+		var index = $(this).attr('menu-index');
+		$('.active[menu-index=' + index +']').addClass('clicked_menu');
+		$('.active[menu-index !=' + index + ']').removeClass('clicked_menu');
+	});
+	
+	
+	//공지작성
+	$('#btnSaveNotice').click(function(){
+		$param = $('#frm_board').serialize(); //입력된 새 글
+		$.post('saveNotice', $param, function(data){ 
+			var json = JSON.parse(data);	
+		})
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 })
 

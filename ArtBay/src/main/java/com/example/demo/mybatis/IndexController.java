@@ -1,5 +1,7 @@
 package com.example.demo.mybatis;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -7,8 +9,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.example.demo.common.ArtBayVo;
+import com.example.demo.common.Page;
 
 @Controller
 @RequestMapping("/")
@@ -16,25 +22,12 @@ public class IndexController {
 
 	@Autowired
 	TestService service;
+	
 
-	@RequestMapping(value="/")
+	@RequestMapping(value="/main")
 	public ModelAndView main() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("main.main");
-		return mv;
-	}
-	
-	@RequestMapping(value="/bidList")
-	public ModelAndView bidList() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bid.list");
-		return mv;
-	}
-	
-	@RequestMapping(value="/bidView")
-	public ModelAndView bidView() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bid.view");
 		return mv;
 	}
 	
@@ -138,6 +131,13 @@ public class IndexController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/location")
+	public ModelAndView location() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("customer.location");
+		return mv;
+	}
+	
 	@RequestMapping(value="/mypageBid")
 	public ModelAndView mypageBid() {
 		ModelAndView mv = new ModelAndView();
@@ -201,5 +201,19 @@ public class IndexController {
 		
 		return mv;
 	}
+	@RequestMapping(value="/customerListView")
+	public ModelAndView ListView(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("customer/ListView");
+		return mv;
+	}
+	@RequestMapping(value="/customerListModify")
+	public ModelAndView ListModify(HttpServletRequest req) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("customer/ListModify");
+		return mv;
+	}
+	
+	
 	
 }

@@ -4,19 +4,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0" >
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" type="text/css" href="../css/artbay.css">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
+<link rel="stylesheet" type="text/css" href="../css/artbay.css">
 <script src="js/index.js"></script>
 <body>
 <form name="frm_view" id="frm_view" method="post">
 	<div class="view_left">
 		<div class="view_top">
-			<p class="img"><img src="../img/spongebob.png" width=300 height=350/></p>
+			<c:forEach var="att" items="${vo.attList }">
+				<p class="img">
+					<img src="${vo.imgFile }" />
+					<br/>
+				</p>
+			</c:forEach>
+			<p class="thumbnail">
+				<img src="../img/spongebob.png" width=300 height=350/>
+			</p>
 			<br/>
 			<div class="view_sml_btn">
 				<p id="like">❤️</p>
@@ -337,6 +345,11 @@
 
 			</div>
 	</div>
+	<div id="hiddenZone">
+			<input type="text" id="findStr" value="${page.findStr }"/>
+			<input type="text" name="nowPage" value="${page.nowPage }"/>
+			<input type="text" name="lot" id="lot" value="${vo.lot }"/>
+		</div>
 </form>
 <script src="../js/artbay.js"></script>
 </body>

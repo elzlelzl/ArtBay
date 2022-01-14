@@ -1,16 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel='stylesheet' type='text/css' href="./css/application2.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel='stylesheet' type='text/css' href="./css/application.css">
 <link rel='stylesheet' type='text/css' href="./css/basic.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 </head>
 <body>
+<!-- 메뉴 네비게이션 -->
+	<%@include file="../header.jsp" %>
 	
 <form name='frm_bay_insert' id='frm_bay_insert' method="post">
 <!-- START KA-CONTAINER -->
@@ -38,7 +44,7 @@
     }
 </style>
 <div class = "applyform">
-		<h1>미술품 경매 신청서</h1>
+		<h1>미술품 위탁 수정</h1>
 </div>
 <div class="container">
     <div id="consign-request-guide">
@@ -65,7 +71,7 @@
             </div>
         </div>
     </div>
- 
+
     <div class="written-call-apply">
         <div>
             <h5>위탁인 정보</h5>
@@ -103,20 +109,7 @@
                     <td class="essential"><span>작품명</span></td>
                     <td>
                         <div>
-                            <input id="artwk_name" class="apply-input" type="text" >
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>작품의 카테고리</td>
-                    <td>
-                        <div>
-                            <select id="artwk_ctgr" class="material-ch ctgr" >
-                                <option value="">카테고리를 선택해 주세요.</option>
-                                <option value="001">그림</option>
-                                <option value="002">사진</option>
-                                <option value="003">도자기</option>
-                            </select>
+                            <input id="title" class="apply-input" type="text" >
                         </div>
                     </td>
                 </tr>
@@ -124,7 +117,7 @@
                     <td>작품의 재료</td>
                     <td>
                         <div>
-                            <select id="material" class="material-ch" >
+                            <select id="material-code" class="material-ch" >
                                 <option value="">재료를 선택해 주세요.</option>
                                 <option value="001">캔버스의 유채</option>
                                 <option value="002">종이에 채색</option>
@@ -133,6 +126,7 @@
                                 <option value="005">조각</option>
                                 <option value="006">도자기</option>
                             </select>
+                            <input type="text">
                         </div>
                     </td>
                 </tr>
@@ -157,11 +151,20 @@
                         </div>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>제작시기</td>
+                    <td>
+                        <div>
+                            <input type="text" id="make-date" >
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td>작품설명</td>
                     <td>
                         <div>
-                            <textarea class="conapply-text" id="contents"  placeholder="작품에 대해서 가능한 많은 정보를 기입해 주세요. (예 : 소장 경로 또는 출처, 감정서 유무, 전시이력)"></textarea>
+                            <textarea class="conapply-text" id="desc"  placeholder="작품에 대해서 가능한 많은 정보를 기입해 주세요. (예 : 소장 경로 또는 출처, 감정서 유무, 전시이력)"></textarea>
                         </div>
                     </td>
                 </tr>
@@ -183,7 +186,7 @@
                                 </div>
                                 <label class="tui-btn tui-btn-upload m-t-5" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 80px; display: flex; align-items: center; justify-content: center;">
                                     <span class="tui-btn-txt" style="line-height: initial;">파일 추가</span>
-                                    <input type="file" name="addFile" class="tui-input-file" multiple="multiple">
+                                    <input type="file" name="userfile[]" class="tui-input-file">
                                 </label>
                             </div>
                         </div>
@@ -193,7 +196,7 @@
                     <td>시작가</td>
                     <td>
                         <div>
-                            <input type="text"  id="start_price"  numberonly="true">
+                            <input type="text"  id="price-desired"  numberonly="true">
                         </div>
                     </td>
                 </tr>
@@ -201,7 +204,7 @@
                     <td>즉시판매가</td>
                     <td>
                         <div>
-     	        			<input type="text"  id="direct_price"  numberonly="true">
+     	        			<input type="text"  id="price-desired"  numberonly="true">
      	        			 <span>※ 즉시 판매를 원치 않을 때는 기입하지 마세요!</span>
                         </div>
                     </td>
@@ -209,7 +212,7 @@
             </tbody></table>
             <div class="apply-btn">
                 <a href="consultationList" onclick="">취소</a>
-                <a href="#" onclick="validate()">위탁 신청</a>
+                <a href="#" onclick="validate()">위탁 수정</a>
             </div>
         </div>
     </div>
@@ -257,6 +260,8 @@
 	</div>
 </div>
 </form>
+<!-- 메인 푸터 -->
+	<%@include file="../footer.jsp" %>
 </body>
 <script type="text/javascript" src="./js/application.js"></script>
 </html>

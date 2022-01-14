@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mybatis.ArtBayMapper">
+	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="com.example.demo.common.ArtBayVo">
+		insert into artbay_member(mid, injung, irum, birth, phone, email, gender, age, pwd, zip, address, address2, mdate, m_status)
+		values(#{mid}, #{injung}, #{irum}, #{birth}, #{phone}, #{email}, #{gender}, #{age}, #{pwd}, #{zip}, #{address}, #{address2}, now(), #{m_status})
+	</insert>
+
+
+	<select id="totSize" parameterType="String" resultType="Integer">
+		select count(lot) totSize from artwork
+		where mid like '%${_parameter}%' or artwork_name like '%${_parameter}%'
+	</select>
+	
+	<select id="search" parameterType="com.example.demo.common.Page" resultType="com.example.demo.common.ArtBayVo">
+		select lot, mid, artwork_name, artwork_ctgr, artist, material, artwork_size, start_price, current_price,
+				regist_date, due_date, hit, direct_price, bid_cnt, crnt_status from artwork
+		where mid like '%${findStr}%' or artist like '%${findStr}%'
+		limit ${startNo-1}, ${listSize};
+	</select>
+	
+	<select id='noticeSave' parameterType="com.example.demo.common.ArtBayVo">
+		insert into(title, doc, not_date) 
+		values (#{title}, #{doc}, ${not_date})
+	</select>
+	
+	<insert id="insertArtWork" parameterType="com.example.demo.common.ArtBayVo">
+		insert into artwork(mid, artwork_name, artwork_ctgr, artist, material, 
+			artwork_size, start_price, current_price, regist_date, due_date, direct_price, hit, bid_cnt, crnt_status)
+		values(#{mid}, #{artwork_name}, #{artwork_ctgr}, #{artist}, #{material}, #{artwork_size}, #{start_price}, 0,
+				now(), (SELECT DATE_ADD(NOW(), INTERVAL 7 DAY)), #{direct_price}, 0, 0, #{crnt_status} )
+	</insert>
+	
+	<select id="view" parameterType="Integer" resultType="com.example.demo.common.ArtBayVo">
+		select * from artwork join artimg on artwork.lot = artimg.lot
+		where artwork.lot = ${_parameter};
+	</select>
+	
+	<select id="attList" parameterType="Integer" resultType="com.example.demo.common.ArtBayVo">
+		select * from artimg where lot = #{_parameter};	
+	</select>
+
+
+
+
+
+
+
+
+</mapper>

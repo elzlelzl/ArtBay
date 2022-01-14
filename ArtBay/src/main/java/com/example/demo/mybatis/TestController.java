@@ -18,7 +18,7 @@ public class TestController {
 		System.out.println("ArtBayController.........................................");
 	}
 	
-	@RequestMapping(value="/index")
+	@RequestMapping(value="/")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
