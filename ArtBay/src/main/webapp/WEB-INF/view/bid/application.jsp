@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- include libraries(jQuery, bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel='stylesheet' type='text/css' href="./css/application2.css">
-<link rel='stylesheet' type='text/css' href="./css/basic.css">
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
+<script type="text/javascript" src="./js/application.js"></script>
 </head>
 <body>
 	
@@ -95,7 +96,7 @@
                     <td>작가명</td>
                     <td>
                         <div id="artist-area">
-                            <input id="artist" type="text" >
+                            <input id="artist" name="artist" type="text" >
                         </div>
                     </td>
                 </tr>
@@ -103,7 +104,7 @@
                     <td class="essential"><span>작품명</span></td>
                     <td>
                         <div>
-                            <input id="artwk_name" class="apply-input" type="text" >
+                            <input id="artwk_name" name="artwk_name" class="apply-input" type="text" >
                         </div>
                     </td>
                 </tr>
@@ -111,7 +112,7 @@
                     <td>작품의 카테고리</td>
                     <td>
                         <div>
-                            <select id="artwk_ctgr" class="material-ch ctgr" >
+                            <select name="artwk_ctgr" id="artwk_ctgr" class="material-ch ctgr" >
                                 <option value="">카테고리를 선택해 주세요.</option>
                                 <option value="001">그림</option>
                                 <option value="002">사진</option>
@@ -124,7 +125,7 @@
                     <td>작품의 재료</td>
                     <td>
                         <div>
-                            <select id="material" class="material-ch" >
+                            <select name="aterial" id="material" class="material-ch" >
                                 <option value="">재료를 선택해 주세요.</option>
                                 <option value="001">캔버스의 유채</option>
                                 <option value="002">종이에 채색</option>
@@ -152,7 +153,7 @@
                                 <input type="text" name="s_size03" id="s_size03" class="s_fld s_size03" placeholder="작품의 폭" numberonly="true">
                             </div>
                             <span>/</span>
-                            <input type="text" id="ho" class="size" numberonly="true">
+                            <input type="text" name="ho" id="ho" class="size" numberonly="true">
                             <span>호</span>
                         </div>
                     </td>
@@ -161,7 +162,7 @@
                     <td>작품설명</td>
                     <td>
                         <div>
-                            <textarea class="conapply-text" id="contents"  placeholder="작품에 대해서 가능한 많은 정보를 기입해 주세요. (예 : 소장 경로 또는 출처, 감정서 유무, 전시이력)"></textarea>
+                            <textarea class="conapply-text" name="contents" id="contents"  placeholder="작품에 대해서 가능한 많은 정보를 기입해 주세요. (예 : 소장 경로 또는 출처, 감정서 유무, 전시이력)"></textarea>
                         </div>
                     </td>
                 </tr>
@@ -169,7 +170,7 @@
                     <td>기타</td>
                     <td>
                         <div>
-                            <textarea class="conapply-text" id="etc"  placeholder="작품에 대한 보관 상태나 요구 사항 등을 기입해 주세요."></textarea>
+                            <textarea class="conapply-text" name="etc" id="etc"  placeholder="작품에 대한 보관 상태나 요구 사항 등을 기입해 주세요."></textarea>
 
                         </div>
                     </td>
@@ -181,10 +182,18 @@
                             <div id="uploader" class="tui-file-uploader uploader-box">
                                 <div class="tui-file-uploader-area" style="min-height: 100px; width: 100%;">
                                 </div>
-                                <label class="tui-btn tui-btn-upload m-t-5" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 80px; display: flex; align-items: center; justify-content: center;">
-                                    <span class="tui-btn-txt" style="line-height: initial;">파일 추가</span>
-                                    <input type="file" name="addFile" class="tui-input-file" multiple="multiple">
-                                </label>
+                                <div class="thumbnail">
+	                                <label class="tui-btn tui-btn-upload m-t-5" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 100%; display: flex; align-items: center; justify-content: center;">
+	                                    <span class="tui-btn-txt" style="line-height: initial;">대표 이미지 추가</span>
+	                                    <input type="file" name="thumbnailFile" class="tui-input-file" >
+	                                </label>
+                                </div>
+                                <div class="viewimg">
+	                                <label class="tui-btn tui-btn-upload m-t-5" style="background-color: rgb(102, 102, 102); color: rgb(255, 255, 255); border: 1px solid gray; height: 28px; line-height: 28px; text-align: center; padding: 0px; width: 100%; display: flex; align-items: center; justify-content: center;">
+	                                    <span class="tui-btn-txt" style="line-height: initial;">상세 이미지 추가</span>
+	                                    <input type="file" name="addFile" class="tui-input-file" multiple="multiple">
+	                                </label>
+                                </div>
                             </div>
                         </div>
                     </td>
@@ -193,7 +202,7 @@
                     <td>시작가</td>
                     <td>
                         <div>
-                            <input type="text"  id="start_price"  numberonly="true">
+                            <input type="text" name="start_price" id="start_price"  numberonly="true">
                         </div>
                     </td>
                 </tr>
@@ -201,15 +210,16 @@
                     <td>즉시판매가</td>
                     <td>
                         <div>
-     	        			<input type="text"  id="direct_price"  numberonly="true">
+     	        			<input type="text" name="direct_price" id="direct_price"  numberonly="true">
      	        			 <span>※ 즉시 판매를 원치 않을 때는 기입하지 마세요!</span>
                         </div>
                     </td>
                 </tr>
             </tbody></table>
             <div class="apply-btn">
-                <a href="consultationList" onclick="">취소</a>
-                <a href="#" onclick="validate()">위탁 신청</a>
+                <a href="bidList" onclick="">취소</a>
+                <a id="Save" href="#" onclick="validate()">위탁 신청</a>
+                <!-- validate() -->
             </div>
         </div>
     </div>
@@ -249,7 +259,7 @@
 			    <span id="modal-warning-message">위탁 신청을 하시겠습니까?</span>
 			    <div class="modal-btn">
 			        <a href="#" onclick="modalOff($('#modal-warning'))">취소</a>
-			    	<a id="btn-warning-confirm" href="consultationList" onclick="">확인</a>
+			    	<a id="btn-warning-confirm">확인</a>
 		        </div>
 		    </div>
 			<img src="./img/popup-close@1x.png" class="modal-close" onclick="modalOff($('#modal-warning'))">
@@ -258,5 +268,4 @@
 </div>
 </form>
 </body>
-<script type="text/javascript" src="./js/application.js"></script>
 </html>

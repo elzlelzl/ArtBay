@@ -2,7 +2,27 @@
  * 
  */
 
-
+$(function(){
+	
+	
+	$('#btn-warning-confirm').click(function(){
+		$param = $('#frm_bay_insert').serialize();
+		alert($param);
+		$.post('insertArtWorSave', $param, function(data){
+			var json = JSON.parse(data);
+			
+			if(json.flag == 'OK'){
+					var $fd = $('#test')[0];
+					$fd.action = "main";
+					$fd.submit();
+				}else{
+					alert("저장중 오류 발생")
+				}
+		})
+	})
+	
+	
+})
 
 
 //숫자만 입력 가능
@@ -19,8 +39,25 @@ function removeCommas(x) {
     else return x.split(",").join("");
 }
 
+function ArtworkSave(){
+		alert( $('#test').serialize())
+		$param = $('#test').serialize();
+		alert($param);
+		$.post('insertArtWorSave', $param, function(data){
+			var json = JSON.parse(data);
+			
+			if(json.flag == 'OK'){
+					var $fd = $('#test')[0];
+					$fd.action = "main";
+					$fd.submit();
+				}else{
+					alert("저장중 오류 발생")
+				}
+		})
+	}
+	
 function validate(){
-	if(title.value==''){
+	if(artwk_name.value==''){
 		$("#modal-common").show();
 	}else{
 		$("#modal-warning").show();

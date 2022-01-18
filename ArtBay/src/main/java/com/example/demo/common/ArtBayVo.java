@@ -41,6 +41,12 @@ public class ArtBayVo {
 	String artist;
 	String material;
 	String artwork_size;
+	
+	//추가
+	String contents;
+	String etc;
+	
+	
 	int start_price;
 	int current_price;
 	String regist_date;
@@ -125,6 +131,14 @@ public class ArtBayVo {
 	public void setMaterial(String material) {this.material = material;}
 	public String getArtwork_size() {return artwork_size;}
 	public void setArtwork_size(String artwork_size) {this.artwork_size = artwork_size;}
+	
+	//추가해야함
+	public String getContents() {return contents;}
+	public void setContents(String contents) {this.contents = contents;}
+	public String getEtc() {return etc;}
+	public void setEtc(String etc) {this.etc = etc;}
+	
+	
 	public int getStart_price() {return start_price;}
 	public void setStart_price(int start_price) {this.start_price = start_price;}
 	public int getCurrent_price() {return current_price;}

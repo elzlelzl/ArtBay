@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.mybatis.ApplicationService;
 import com.example.demo.mybatis.MemberService;
 import com.example.demo.mybatis.NoticeService;
 
@@ -24,6 +25,7 @@ public class ArtBayController {
 	@Autowired
 	MemberService memberService;
 	NoticeService noticeService;
+	ApplicationService applicationService;
 	
 	AES aes = new AES();
 	Page page = new Page();
@@ -53,6 +55,17 @@ public class ArtBayController {
 	public void saveNotice(ArtBayVo vo) {
 		this.b = noticeService.saveNotice(vo);
 	}
+	//경매신청
+	@RequestMapping(value="/insertArtWorSave", method= {RequestMethod.POST})
+	public void insertArtWorSave(ArtBayVo vo) {
+		try {
+			b = applicationService.insertArtwork(vo);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	/*
 	@RequestMapping(value="/")
 	public ModelAndView index() {
