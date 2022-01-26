@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+#noticeList {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+#noticeList h1 {
+	height: 160px;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+	padding-top: 40px;
+}
+
+#noticeList #notice {
+	width: 100%;
+	position: relative;
+	min-height: 600px;
+	line-height: 1.5em;
+	margin: 0 auto;
+}
+
+#noticeList #noticeSearch {
+	width: 100%;
+	margin: 20px auto;
+}
+
+#noticeList #noticeSearch #findZone {
+	float: right;
+}
+#noticeList #noticeSearch #findZone #btnNoticeSearch{
+	cursor:pointer;
+}
+#noticeList #notice #title {
+	background-color: #ddd;
+	height: 30px;
+}
+
+#noticeList #notice .title {
+	display: inline-block;
+	text-align: center;
+	width: 930px;
+	text-align: center;
+	overflow: hidden;
+}
+
+#noticeList #notice .noticeDate {
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+	text-align: center;
+}
+
+#noticeList #notice .hit {
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+	text-align: center;
+}
+
+#noticeList #notice #rows #row {
+	border-bottom: 2px solid #ddd;
+	height: 30px;
+}
+
+#noticeList #notice #title .chkDeleteNotice {
+	position: relative;
+	top: -25px;
+}
+
+#noticeList #notice #rows .chkDeleteNotice {
+	position: relative;
+	top: -25px;
+}
+
+#noticeList #notice .chkDeleteNotice {
+	display: inline-block;
+	text-align: center;
+	width: 80px;
+	margin-left: 1150px;
+	padding-bottom: 28px;
+}
+
+#noticeList #notice #row:hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+
+#noticeList #btnWriteNotice {
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	background-color: #fff;
+	margin-top: 40px;
+	border: 1px solid #000;
+}
+
+#noticeList #btnWriteNotice:hover {
+	background-color: #f60;
+	border: 1px solid #f60;
+	color: #fff;
+	cursor: pointer;
+}
+
+#noticeList #btnZone {
+	margin-top: 80px;
+	text-align: center;
+}
+
+#noticeList #btnZone input {
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+#noticeList #btnDeleteNotice {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background-color: #fff;
+	margin-top: 40px;
+	margin-left: 550px;
+	border: 1px solid #000;
+}
+
+#noticeList #btnDeleteNotice:hover {
+	color: #fff;
+	background-color: #f60;
+	border: 1px solid #f60;
+	cursor: pointer;
+}
+
+#noticeList #btnZone .here {
+	border: 2px solid #f60;
+}
+
+#noticeList #deleteNotice_alert {
+	display: none;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#noticeList #deleteNotice_alert form {
+	background-color: #fff;
+	width: 340px;
+	padding: 40px;
+	margin: 300px auto;
+	position: relative;
+	border-radius: 10px;
+}
+
+#noticeList #deleteNotice_alert form input[type='button'] {
+	margin: 10px 10px 0 30px;
+	width: 60px;
+	background-color: #000;
+	color: #fff;
+}
+
+#noticeList #deleteNotice_alert form input[type='button']:hover {
+	cursor: pointer;
+	background-color: #f60;
+}
+
+#noticeList #deleteNotice_alert form #close-area {
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+}
+
+.applyform > .bgImgCustomer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-image: url("../img/background-img-customer.jpg");
+	background-size: cover;
+}
