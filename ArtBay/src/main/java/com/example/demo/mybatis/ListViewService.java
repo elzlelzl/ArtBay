@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.common.AES;
-import com.example.demo.common.ArtBayAtt;
-import com.example.demo.common.ArtBayVo;
-import com.example.demo.common.Page;
+import kr.artbay.common.AES;
+import kr.artbay.common.ArtBayAtt;
+import kr.artbay.common.ArtBayVo;
+import kr.artbay.common.Page;
 
 @Service
 @Transactional
@@ -28,9 +29,11 @@ public class ListViewService {
 	TransactionStatus status;
 	Page page;
 	
-	public List<ArtBayVo> search(Page page){
+	
+	public List<ArtBayVo> search(Page page, @RequestParam(value="findStr", required=false) String findStr){
 		List<ArtBayVo> list = null;
-		int totSize = mapper.totSize(page.getFindStr());
+		page.setFindStr(findStr);
+		int totSize = mapper.totSize(findStr);
 		page.setTotSize(totSize);
 		this.page = page;
 		
@@ -42,8 +45,22 @@ public class ListViewService {
 		ArtBayVo vo = new ArtBayVo();
 		vo.setLot(lot);
 		List<ArtBayAtt> list = new ArrayList<ArtBayAtt>();
-		list = mapper.view(lot);
+		vo = mapper.view(lot);
+		list = mapper.attList(lot);
 		vo.setAttList(list);
+		return vo;
+	}
+	
+	public ArtBayVo viewOthers(int lot) {
+		ArtBayVo vo = new ArtBayVo();
+		List<ArtBayAtt> list = new ArrayList<ArtBayAtt>();
+		list = mapper.viewOthers(lot);
+		vo.setAttList(list);
+		for(int i=0; i<list.size(); i++) {
+			//System.out.println(list.get(i).getImgFile());
+			//System.out.println(vo.getAttList().get(i).getImgFile());
+			//System.out.println(vo.getAttList().get(i).getLot());
+		}
 		return vo;
 	}
 	

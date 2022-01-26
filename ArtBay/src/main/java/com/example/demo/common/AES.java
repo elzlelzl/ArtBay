@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 
-import com.example.demo.common.AES;
+import kr.artbay.common.AES;
 
 public class AES {
 	String iv;

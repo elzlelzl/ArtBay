@@ -13,37 +13,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-
-
 @Controller
 public class SummerUploadController {
-	@RequestMapping(value="/summerUp")
-	public void upload(@RequestParam("file") List<MultipartFile> mul,
-						HttpServletRequest req,	HttpServletResponse resp,
-						String flag) {
-		resp.setContentType("text/html; charset=utf-8");
+	
+	
+	@RequestMapping(value="/ntcSummerUp") //
+	public void upload(@RequestParam("file") List<MultipartFile> mul, 
+						HttpServletResponse resp){
+		resp.setContentType("text/html;charset=utf-8");
 		try {
-			PrintWriter out = resp.getWriter();
+		
 			String path = FileUploadController.uploadPath;
 			UUID uuid = null;
+			PrintWriter out = resp.getWriter();
+			
 			for(MultipartFile m : mul) {
-				File targetFile = new File(path + m.getOriginalFilename());
+				File targetFile = new File(path+m.getOriginalFilename());
 				m.transferTo(targetFile);
 				uuid = UUID.randomUUID();
 				File temp = new File(path + uuid.toString() + "-" + m.getOriginalFilename());
 				targetFile.renameTo(temp);
-				
 				out.print("./upload/" + uuid.toString() + "-" + m.getOriginalFilename());
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		}catch(Exception ex) {
+			ex.printStackTrace();
 		}
 	}
-	
-	@RequestMapping(value="/summerDelete")
+	@RequestMapping(value="/ntcSummerDelete")
 	public void delete(HttpServletRequest req) {
-		
 		String target = req.getParameter("target");
+		
 		String[] temp = target.split("/");
 		File delFile = new File(FileUploadController.uploadPath + temp[temp.length-1]);
 		if(delFile.exists()) delFile.delete();

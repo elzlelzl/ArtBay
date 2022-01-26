@@ -3,20 +3,25 @@ package com.example.demo.common;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.mybatis.ApplicationService;
-import com.example.demo.mybatis.MemberService;
-import com.example.demo.mybatis.NoticeService;
+import kr.artbay.mybatis.ApplicationService;
+import kr.artbay.mybatis.FaqService;
+import kr.artbay.mybatis.MemberService;
+import kr.artbay.mybatis.NoticeService;
 
 
 @RestController
@@ -24,17 +29,20 @@ public class ArtBayController {
 	
 	@Autowired
 	MemberService memberService;
+	@Autowired
 	NoticeService noticeService;
+	@Autowired
 	ApplicationService applicationService;
 	
 	AES aes = new AES();
 	Page page = new Page();
 	ArtBayVo vo = null;
+	ArtBaySessionVo sv = null;
 	boolean b = false;
-	
+	String c = "";
+	PrintWriter out;
+	int lot = 0;
 	/*gitSpring 컨트롤러 내용
-	@Autowired
-	BoardService service;
 	String msg="";
 	int serial;
 	int grp = 0;
@@ -45,27 +53,124 @@ public class ArtBayController {
 	//회원가입
 	@RequestMapping(value="/insertMemberSave", method= {RequestMethod.POST})
 	public void insertMemberSave(ArtBayVo vo) {
-		//System.out.println("ArtBayController : " + vo.getMid());
-		
+		//System.out.println("ArtBayController : " + vo.getMemberJoinEmail());
 		this.b = memberService.insertMember(vo);
 	}
 	
-	
-	@RequestMapping(value="/saveNotice", method= {RequestMethod.POST})
-	public void saveNotice(ArtBayVo vo) {
-		this.b = noticeService.saveNotice(vo);
+	//아이디중복체크
+	@RequestMapping(value="/checkId", method= {RequestMethod.POST})
+	public boolean checkId(ArtBayVo vo) {
+		this.c = vo.getMid();
+		this.b = memberService.checkId(c);
+		return b;
 	}
-	//경매신청
+	
+	//이메일인증
+	@RequestMapping(value="/emailCertification", method= {RequestMethod.POST})
+	public void emailCertification(ArtBayVo vo) {
+        //this.b = memberService.insertMember(vo);
+	}
+	
+	//회원 로그인
+	@RequestMapping(value="/memberLogin", method= {RequestMethod.POST})
+	public String memberLogin(ArtBaySessionVo sv, HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		session.setMaxInactiveInterval(10*360);
+		this.c = memberService.memberLogin(sv);
+		if(c == "failMid" || c == "failPwd") {
+			session.invalidate();
+		}else {
+			session.setAttribute("sv", sv);
+		}
+		return c;
+	}
+	
+	//회원 로그아웃
+	@RequestMapping(value="/memberLogout")
+	public void memberLogout(HttpServletRequest req) { 
+		HttpSession session = req.getSession();
+		session.invalidate();		
+	}
+	
+	//회원정보수정화면 비밀번호체크 후 정보조회 출력
+	@ResponseBody
+	@RequestMapping(value="/pwdChkForModi")
+	public ArtBayVo pwdChkForModi(ArtBaySessionVo sv, HttpServletRequest req) { 
+		HttpSession session = req.getSession();
+		String npwd = sv.getOldPwd(); //사용자가 방금 입력한 pwd
+		sv = (ArtBaySessionVo)session.getAttribute("sv"); //세션에 있던 로그인 정보
+		String mid = sv.getMid();
+		String pwd = sv.getPwd();
+		
+		this.vo = memberService.pwdChkForModi(mid, pwd, npwd);		
+		System.out.println(vo.getOldPwd());
+		if(vo.getOldPwd().equals("passPwd")) {
+			c = "passPwd";
+		}else {
+			c = "failPwd";
+		}
+		
+		return vo;
+	}
+	
+	//회원정보수정 update
+	@RequestMapping(value="/updateMemberInfo", method= {RequestMethod.POST})
+	public String updateMemberInfo(ArtBayVo vo) {
+		this.b = memberService.updateMemberInfo(vo);
+		if(b == true) {
+			c = "passUpdate";
+		}else {
+			c = "failUpdate";
+		}
+		
+		return c;
+	}
+	
+	//경매신청 페이지
+	@RequestMapping(value="/bidApplication" , method = {RequestMethod.POST,  RequestMethod.GET})
+	public ModelAndView bidApplication( HttpServletRequest req, Page page) {
+		HttpSession session = req.getSession();
+		sv = (ArtBaySessionVo)session.getAttribute("sv");
+		String mid = sv.getMid();
+		ModelAndView mv = new ModelAndView();
+		vo = applicationService.memberview(mid);
+		mv.addObject("vo", vo);
+		mv.addObject("page", page);
+		mv.setViewName("bid.application");
+		return mv;
+	}
+	
+	//경매신청 insert
 	@RequestMapping(value="/insertArtWorSave", method= {RequestMethod.POST})
-	public void insertArtWorSave(ArtBayVo vo) {
+	public void insertArtWorSave(ArtBayVo vo, HttpServletResponse resq,  HttpServletRequest req) {
 		try {
-			b = applicationService.insertArtwork(vo);
-			
+			HttpSession session = req.getSession();
+			sv = (ArtBaySessionVo)session.getAttribute("sv");
+			String mid = sv.getMid();
+			out = resq.getWriter();
+			vo.setMid(mid);
+			vo.setCrnt_status("경매중");
+			vo.setArtwork_size(vo.getS_size01()+"x"+ vo.getS_size02() +"x"+ vo.getS_size03() +"/"+ vo.getHo() + "호");
+			this.b = applicationService.insertArtwork(vo);
+			this.lot = applicationService.getLot();
+			System.out.println("lot " + this.lot);
+			String temp = "{'flag':'%s', 'lot' : '%s'}";
+			String flag ="";
+			if(b) {
+				flag = "OK";
+			}else {
+				flag = "Fail";
+			}
+			String json = String.format(temp, flag, lot);
+			json = json.replaceAll("'", "\"");
+			out.print(json);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
+
+	 
 	/*
 	@RequestMapping(value="/")
 	public ModelAndView index() {

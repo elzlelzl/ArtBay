@@ -8,8 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import com.example.demo.common.AES;
-import com.example.demo.common.ArtBayVo;
+import kr.artbay.common.AES;
+import kr.artbay.common.ArtBaySessionVo;
+import kr.artbay.common.ArtBayVo;
 
 @Service
 @Transactional
@@ -26,6 +27,7 @@ public class MemberService {
 	
 	TransactionStatus status;
 	
+	//회원가입 정보 저장
 	public boolean insertMember(ArtBayVo vo) {
 		boolean b = false;
 		status = manager.getTransaction(new DefaultTransactionDefinition());
@@ -44,4 +46,96 @@ public class MemberService {
 		return b;
 	}
 	
+	//아이디 중복체크
+	public boolean checkId(String c) {
+		boolean b = true;
+		
+		try {
+			String d = mapper.checkId(c);
+			if(d.equals(c)) b = false;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return b;
+	}
+	
+	//로그인
+	public String memberLogin(ArtBaySessionVo sv) {
+		String c = "";
+		
+		try {
+			ArtBaySessionVo svv = mapper.memberLogin(sv);
+			if(sv.getMid().equals("admin") && sv.getPwd().equals("admin")) {
+				c = "login";
+			}else if(svv.getMid().equals(sv.getMid())) {
+				if(svv.getPwd().equals(sv.getPwd())) {
+					c = "login";
+				}else {
+					c = "failPwd";
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			c = "failMid";
+		}
+		
+		return c;
+	}
+	
+	//회원정보수정화면 비밀번호체크 후 정보조회 출력
+	public ArtBayVo pwdChkForModi(String mid, String pwd, String npwd) {
+		ArtBayVo vo = null;
+		
+		try {
+			vo = mapper.pwdChkForModi(mid);
+			if(vo.getPwd().equals(npwd)) {
+				vo.setOldPwd("passPwd");
+			}else {
+				vo.setOldPwd("failPwd");
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			vo.setOldPwd("err");
+		}
+		return vo;
+	}
+	
+	//회원정보수정 update
+	public boolean updateMemberInfo(ArtBayVo vo) {
+		boolean b = false;
+		status = manager.getTransaction(new DefaultTransactionDefinition());
+		
+		try {
+			System.out.println("mapper 돌리나?1");
+			int c = mapper.updateMemberInfo(vo);
+			System.out.println("mapper 돌리나?2");
+			System.out.println(c);
+			if(c>0) {
+				System.out.println("commit 돌리나?1");
+				manager.commit(status);
+				System.out.println("commit 돌리나?2");
+				b = true;
+			}
+		}catch(Exception e) {
+			System.out.println("err 인가?1");
+			e.printStackTrace();
+			System.out.println("err 인가?2");
+			manager.rollback(status);
+			System.out.println("err 인가?3");
+		}
+		
+		return b;
+	}
+	
 }
+
+
+
+
+
+
+
+

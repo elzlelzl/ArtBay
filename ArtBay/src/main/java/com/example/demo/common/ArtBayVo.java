@@ -3,7 +3,7 @@ package com.example.demo.common;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArtBayVo {
+public class ArtBayVo { 
 	//혹시 빠진게 있나 확인 부탁해요~
 	int serial;
 	int lot;
@@ -13,7 +13,7 @@ public class ArtBayVo {
 	
 	//응찰
 	int bid_price;
-	int bid_date;
+	String bid_date;
 	
 	//낙찰 
 	int winbid_price;
@@ -25,10 +25,11 @@ public class ArtBayVo {
 	String irum;
 	String birth;
 	String phone;
-	String email;
+	String memberJoinEmail;
 	String gender;
 	int age;
 	String pwd;
+	String oldPwd;
 	String zip;
 	String address;
 	String address2;
@@ -40,23 +41,26 @@ public class ArtBayVo {
 	String artwork_ctgr;
 	String artist;
 	String material;
+	int s_size01;
+	int s_size02;
+	int s_size03;
+	int ho;
 	String artwork_size;
-	
-	//추가
 	String contents;
 	String etc;
-	
-	
 	int start_price;
 	int current_price;
 	String regist_date;
 	String due_date;
 	int bid_cnt;
 	String crnt_status;
+	String sort;
 	
 	//공지사항
 	String title;
 	String doc;
+	String not_date;
+	
 	
 	//QNA
 	int qna_num;
@@ -64,6 +68,8 @@ public class ArtBayVo {
 	String qna_doc;
 	String qna_date;
 	String qna_status;
+	String qna_type;
+	String qna_pwd;
 	
 	int hit;
 	int grp;
@@ -72,11 +78,25 @@ public class ArtBayVo {
 	String thumbnail;
 	
 	
+	
 	String imgFile;
 	int attCnt;
 	List<ArtBayAtt> attList = new ArrayList<ArtBayAtt>();
 	List<String> delList = new ArrayList<String>();	
 	String[] delFile;
+	
+	
+	//faq
+	String ctgr;
+	String faq_title;
+	String faq_doc;
+	public String getCtgr() {return ctgr;}
+	public void setCtgr(String ctgr) {this.ctgr = ctgr;}
+	public String getFaq_title() {return faq_title;}
+	public void setFaq_title(String faq_title) {this.faq_title = faq_title;}
+	public String getFaq_doc() {return faq_doc;}
+	public void setFaq_doc(String faq_doc) {this.faq_doc = faq_doc;}
+	
 	
 	public String[] getDelFile() {return delFile;}
 	public void setDelFile(String[] delFile) {this.delFile = delFile;}
@@ -87,14 +107,16 @@ public class ArtBayVo {
 	public String getDoc() {return doc;}
 	public void setDoc(String doc) {this.doc = doc;}
 	public String getPwd() {return pwd;}
+	public String getOldPwd() {return oldPwd;}
+	public void setOldPwd(String oldPwd) {this.oldPwd = oldPwd;}
 	public int getLot() {return lot;}
 	public void setLot(int lot) {this.lot = lot;}
 	public int getDirect_price() {return direct_price;}
 	public void setDirect_price(int direct_price) {this.direct_price = direct_price;}
 	public int getBid_price() {return bid_price;}
 	public void setBid_price(int bid_price) {this.bid_price = bid_price;}
-	public int getBid_date() {return bid_date;}
-	public void setBid_date(int bid_date) {this.bid_date = bid_date;}
+	public String getBid_date() {return bid_date;}
+	public void setBid_date(String bid_date) {this.bid_date = bid_date;}
 	public int getWinbid_price() {return winbid_price;}
 	public void setWinbid_price(int winbid_price) {this.winbid_price = winbid_price;}
 	public int getWinbid_date() {return winbid_date;}
@@ -107,8 +129,10 @@ public class ArtBayVo {
 	public void setBirth(String birth) {this.birth = birth;}
 	public String getPhone() {return phone;}
 	public void setPhone(String phone) {this.phone = phone;}
-	public String getEmail() {return email;}
-	public void setEmail(String email) {this.email = email;}
+	public String getEmail() {return memberJoinEmail;}
+	public String getMemberJoinEmail() {return memberJoinEmail;}
+	public void setMemberJoinEmail(String memberJoinEmail) {this.memberJoinEmail = memberJoinEmail;}
+	public void setEmail(String email) {this.memberJoinEmail = email;}
 	public String getGender() {return gender;}
 	public void setGender(String gender) {this.gender = gender;}
 	public int getAge() {return age;}
@@ -128,17 +152,21 @@ public class ArtBayVo {
 	public String getArtist() {return artist;}
 	public void setArtist(String artist) {this.artist = artist;}
 	public String getMaterial() {return material;}
+	public int getS_size01() {return s_size01;}
+	public void setS_size01(int s_size01) {this.s_size01 = s_size01;}
+	public int getS_size02() {return s_size02;}
+	public void setS_size02(int s_size02) {this.s_size02 = s_size02;}
+	public int getS_size03() {return s_size03;}
+	public void setS_size03(int s_size03) {this.s_size03 = s_size03;}
+	public int getHo() {return ho;}
+	public void setHo(int ho) {this.ho = ho;}
 	public void setMaterial(String material) {this.material = material;}
 	public String getArtwork_size() {return artwork_size;}
-	public void setArtwork_size(String artwork_size) {this.artwork_size = artwork_size;}
-	
-	//추가해야함
 	public String getContents() {return contents;}
 	public void setContents(String contents) {this.contents = contents;}
 	public String getEtc() {return etc;}
 	public void setEtc(String etc) {this.etc = etc;}
-	
-	
+	public void setArtwork_size(String artwork_size) {this.artwork_size = artwork_size;}
 	public int getStart_price() {return start_price;}
 	public void setStart_price(int start_price) {this.start_price = start_price;}
 	public int getCurrent_price() {return current_price;}
@@ -158,7 +186,11 @@ public class ArtBayVo {
 	public String getQna_date() {return qna_date;}
 	public void setQna_date(String qna_date) {this.qna_date = qna_date;}
 	public String getQna_status() {return qna_status;}
-	public void setQna_status(String qna_status) {this.qna_status = qna_status;}
+	public void setQna_status(String qna_status) {this.qna_status = qna_status;}	
+	public String getQna_type() {return qna_type;}
+	public void setQna_type(String qna_type) {this.qna_type = qna_type;}
+	public String getQna_pwd() {return qna_pwd;}
+	public void setQna_pwd(String qna_pwd) {this.qna_pwd = qna_pwd;}
 	public String getThumbnail() {return thumbnail;}
 	public void setThumbnail(String thumbnail) {this.thumbnail = thumbnail;}
 	public String getImgFile() {return imgFile;}
@@ -174,9 +206,7 @@ public class ArtBayVo {
 	public void setSeq(int seq) {this.seq = seq;}
 	public int getDeep() {return deep;}
 	public void setDeep(int deep) {this.deep = deep;}
-	public int getAttCnt() {
-		return attCnt;
-	}
+	public int getAttCnt() {return attCnt;}
 	public void setAttCnt(int attCnt) {this.attCnt = attCnt;}
 	public List<ArtBayAtt> getAttList() {return attList;}
 	public void setAttList(List<ArtBayAtt> attList) {this.attList = attList;}
@@ -186,5 +216,9 @@ public class ArtBayVo {
 	public void setBid_cnt(int bid_cnt) {this.bid_cnt = bid_cnt;}
 	public String getCrnt_status() {return crnt_status;}
 	public void setCrnt_status(String crnt_status) {this.crnt_status = crnt_status;}
+	public String getNot_date() {return not_date;}
+	public void setNot_date(String not_date) {this.not_date = not_date;}
+	public String getSort() {return sort;}
+	public void setSort(String sort) {this.sort = sort;}
 	
 }

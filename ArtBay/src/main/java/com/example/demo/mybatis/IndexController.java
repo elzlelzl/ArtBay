@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.common.ArtBayVo;
-import com.example.demo.common.Page;
+import kr.artbay.common.ArtBayVo;
+import kr.artbay.common.Page;
 
 @Controller
 @RequestMapping("/")
@@ -38,12 +38,6 @@ public class IndexController {
 		return mv;
 	}
 	
-	@RequestMapping(value="/bidApplication")
-	public ModelAndView bidApplication() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("bid.application");
-		return mv;
-	}
 	
 	@RequestMapping(value="/howtoHowto")
 	public ModelAndView howTo() {
@@ -201,16 +195,16 @@ public class IndexController {
 		
 		return mv;
 	}
-	@RequestMapping(value="/customerListView")
+	@RequestMapping(value="/mypageListView")
 	public ModelAndView ListView(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("customer/ListView");
+		mv.setViewName("mypage/ListView");
 		return mv;
 	}
-	@RequestMapping(value="/customerListModify")
+	@RequestMapping(value="/mypageListModify")
 	public ModelAndView ListModify(HttpServletRequest req) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("customer/ListModify");
+		mv.setViewName("mypage/ListModify");
 		return mv;
 	}
 	

@@ -11,25 +11,37 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800">
 <link rel="stylesheet" type="text/css" href="../css/artbay.css">
-<script src="js/index.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/artbay.js" charset="UTF-8"></script>
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+				
+
 <body>
 <form name="frm_view" id="frm_view" method="post">
 	<div class="view_left">
 		<div class="view_top">
 			<c:forEach var="att" items="${vo.attList }">
 				<p class="img">
-					<img src="${vo.imgFile }" />
+					<img name="small_img" id="small_img" src="${att.imgFile }" onclick="thumbnailChange('${att.imgFile }')"/>
 					<br/>
 				</p>
 			</c:forEach>
 			<p class="thumbnail">
-				<img src="../img/spongebob.png" width=300 height=350/>
+				<c:forEach var="att" items="${vo.attList }">
+					<c:if test="${att.thumbnail eq 'Y' }">
+						<div><img name="thumbnail_img" id="thumbnail_img" src="${att.imgFile }" width=300 height=350/></div>
+					</c:if>
+				</c:forEach>
 			</p>
 			<br/>
 			<div class="view_sml_btn">
-				<p id="like">❤️</p>
 				<p id="share">🔗</p>
 				<p id="magnifier">🔎</p>
+			</div>
+			<div class="shareUrl">
+				<input type="text" value="가나다">
 			</div>
 		</div>
 		<div class="work_info">
@@ -337,6 +349,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="caution">
 			<h3>Condition Report</h3>
 			<div class="caution_inquiry">
@@ -345,12 +358,38 @@
 
 			</div>
 	</div>
+	<h3>작가의 다른 작품</h3>
+	<div class="otherWorks" style="display:inline-block; height:200px;">
+		<c:forEach var="atts" items="${others }" varStatus="status">
+			<div style=" height:200px;">
+				<img name="otherWorksImg" id="otherWorksImg" src="${atts.imgFile }"
+					onclick="artbay.othersView(${atts.lot})"/>
+			</div>
+		</c:forEach>
+	</div>
 	<div id="hiddenZone">
-			<input type="text" id="findStr" value="${page.findStr }"/>
-			<input type="text" name="nowPage" value="${page.nowPage }"/>
-			<input type="text" name="lot" id="lot" value="${vo.lot }"/>
-		</div>
+		<input type="text" name="findStr" 	id="findStr" value="${page.findStr }"/>
+		<input type="text" name="nowPage"	id="nowPage" value="${page.nowPage }"/>
+		<input type="text" name="lot"		id="lot" value="${vo.lot }"/>
+		<input type="text" name="othersLot" id="othersLot" />
+		<input type="text" name="sort" 		id="sort" value="${page.sort }"/>
+	</div>
 </form>
-<script src="../js/artbay.js"></script>
+ <script type="text/javascript">
+   $(document).ready(function(){
+		$('.otherWorks').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			addaptiveHeight: true,
+			prevArrow: '<div class="arrPrev" style="float: left;"><span></span></div>',
+			nextArrow: '<div class="arrNext" style="float: right;"><span></span></div>',
+			respondTo: 'slider', //makes the slider to change width depending on the container it is in
+			adaptiveHeight: true 
+		});
+   });
+ </script>
+
+
+
 </body>
 </html>

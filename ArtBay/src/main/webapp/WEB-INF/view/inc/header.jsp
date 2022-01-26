@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <header>	
-<script src = '/js/artbay_minseob.js'></script><!-- 로그인 페이지 모달창 제어용 -->
+<script src = '/js/login_only.js'></script><!-- 로그인 전용 페이지(모달창 제어용) -->
 	<!-- 메인 로고 -->	
 	<ul class="logo clearfix">
 		<li><a href="main">ARTBAY</a></li>
@@ -14,21 +14,19 @@
 			<ul>
 				<li><a href="bidList">진행중인 경매</a></li>
 				<li><a href="bidResult">경매결과</a></li>
-				<li><a href="bidApplication">경매신청</a></li>
 			</ul>
 		</li>			
 		<li><a href="#">How To</a>
 			<ul>
-				<li><a href="howtoHowto">경매소개</a></li>
-				<li><a href="howtoBidIntro">응찰안내</a></li>
-				<li><a href="howtoConsignGuide">위탁안내</a></li>
-				<li><a href="howtoHowtotest">안내 테스트</a></li>
+				<li><a href="howtoHowtotest">경매소개</a></li>
+				<li><a href="howtoBidIntrotest">응찰안내</a></li>
+				<li><a href="howtoConsignGuidetest">위탁안내</a></li>
 			</ul>
 		</li>
 		<li><a href="#">Customer Service</a>
 			<ul>
-				<li><a href="customerFAQ">자주묻는질문(FAQ)</a></li>
-				<li><a href="customerConsultationList">1:1상담문의</a></li>
+				<li><a href="faqList">자주묻는질문(FAQ)</a></li>
+				<li><a href="qnaList">1:1상담문의</a></li>
 				<li><a href="customerNoticeList">공지사항</a></li>
 			</ul>
 		</li>
@@ -37,7 +35,7 @@
 	<!-- 로그인/회원가입/마이페이지/위시리스트 -->
 	<ul class="mainLogin clearfix">
 		<c:choose>
-			<c:when test="${ empty sessionScope.mid }">
+			<c:when test="${ empty sessionScope.sv }">
 				<li><a href="#" id='btnLogin' data-toggle='modal' data-target='#madal' role='botton'>LOGIN</a></li>
 				<li><a href="mypageMemberJoin">JOIN</a></li>			
 			</c:when>
