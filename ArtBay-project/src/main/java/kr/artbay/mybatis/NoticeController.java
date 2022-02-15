@@ -52,8 +52,9 @@ public class NoticeController {
 	
 	//공지 저장
 		@RequestMapping(value="/noticeSave", method= {RequestMethod.POST, RequestMethod.GET})
-		public void noticeSave(ArtBayVo vo, HttpServletResponse resp) {
+		public void ModelAndView (ArtBayVo vo, Page page, HttpServletResponse resp) {
 			try {
+
 				out = resp.getWriter();
 				this.b = service.insertNtc(vo);
 				this.grp = service.getGrp();
@@ -98,6 +99,7 @@ public class NoticeController {
 			}
 			List<ArtBayVo> list = service.noticeSearch(page);
 			page = service.getPage();
+			
 			mv.addObject("msg", msg);
 			mv.addObject("Page", page);
 			mv.addObject("list", list);
